@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Tech Blog</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/public/css/main.css">
 
 </head>
 
@@ -17,7 +17,7 @@
             </li>
             {{#if loggedIn}}
             <li>
-                <p><a class="link" href="/dashboard">Dashboard</a></p>
+                <p><a class="link" href="/views/dashboard.handlebars">Dashboard</a></p>
             </li>
             <li>
                 <p><button id="logout-btn" class="btn-no-style">Logout</button> </p>
@@ -25,7 +25,7 @@
 
             {{else}}
             <li>
-                <p><a class="link" href="/login">Login</a></p>
+                <p><a class="link" href="/views/login.handlebars">Login</a></p>
             </li>
             {{/if}}
         </ul>
@@ -36,7 +36,7 @@
 </body>
 {{!--
 <script src="/js/nav.js"></script> --}}
-<script src="/js/logout.js"></script>
-<script src="/js/home.js"></script>
+<script src="/public/js/login.js"></script>
+<script src="/public/js/home.js"></script>
 
 </html>
