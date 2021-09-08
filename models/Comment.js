@@ -1,51 +1,48 @@
-// Comment model
-// Dependencies
-// sequelize model, datatypes, and database connection
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+// set up imports
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-// the Comment model extends the sequelize model 
+//Set up object
 class Comment extends Model {}
 
-// define the table columns and configuration, similar to the setup for the other models
 Comment.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        comment_text: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                // comment must be at least one character long
-                len: [1]
-            }
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        },
-        post_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'post',
-                key: 'id'
-            }
-        }
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'comment'
-    }
-)
-
-// Export the model
+    comment_text: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: { len: [1] }, //ensure there is at least one character inside the comment body
+    },
+    user_id: {
+      //user who made the post
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+    post_id: {
+      //the id of the post it belongs to
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "post",
+        key: "id",
+      },
+    },
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "comment",
+  }
+);
+//export
 module.exports = Comment;
