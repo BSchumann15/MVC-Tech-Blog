@@ -1,36 +1,17 @@
-<link rel="stylesheet" href="/public/css/login.css">
-<div class="wrapper">
-    <form class="login-form">
-        <div class="padding-md">
-            <label for="email-login">email:</label>
-            <input type="text" id="email-login" />
-        </div>
-        <div class="padding-md">
-            <label for="password-login">password:</label>
-            <input type="password" id="password-login" />
-        </div>
-        <div class="padding-md">
-            <button type="submit" id="login-btn">login</button>
-        </div>
-    </form>
+<form class="login-form">
+  <div>
+    <label for="email-login">Email:</label>
+    <input type="text" id="email-login" />
+  </div>
+  <div>
+    <label for="password-login">Password:</label>
+    <input type="password" id="password-login" />
+  </div>
+  <div>
+    <button type="submit">Login</button>
+  </div>
+  <div class ="sign-up">
+      Not a member? <a href="/signup">Sign Up now!</a>
+  </div>
 
-    <form class="signup-form">
-        <div>
-            <label for="username-signup">username:</label>
-            <input id="username-signup" type="text">
-        </div>
-        <div>
-            <label for="email-signup">email:</label>
-            <input type="text" id="email-signup" />
-        </div>
-        <div>
-            <label for="password-signup">password:</label>
-            <input type="password" id="password-signup" />
-        </div>
-        <div>
-            <button type="submit" id="signup-btn">signup</button>
-        </div>
-    </form>
-</div>
-{{!-- Load the login script --}}
-<script src="/public/js/login.js"></script>
+  <script src="/javascript/login.js"></script>

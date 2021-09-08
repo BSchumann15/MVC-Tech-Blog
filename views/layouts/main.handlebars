@@ -1,42 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Tech Blog</title>
-    <link rel="stylesheet" href="/public/css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tech Blog</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
 <body>
-    {{!-- Nav bar that goes on every page --}}
-    <nav id="navbar">
-        <ul id="navbar-ul">
-            <li>
-                <p><a class="link" href="/">Home</a></p>
-            </li>
-            {{#if loggedIn}}
-            <li>
-                <p><a class="link" href="/views/dashboard.handlebars">Dashboard</a></p>
-            </li>
-            <li>
-                <p><button id="logout-btn" class="btn-no-style">Logout</button> </p>
-            </li>
-
-            {{else}}
-            <li>
-                <p><a class="link" href="/views/login.handlebars">Login</a></p>
-            </li>
-            {{/if}}
-        </ul>
-        <h1 id="nav-header">The Tech Blog</h1>
+  <div class="wrapper">
+    <header>
+      <h1>
+        <p class="blog-title">The Tech Blog <i class="large material-icons">laptop_mac</i></p>
+      </h1>
+    
+    <nav>
+    {{#if loggedIn}}
+    <a href="/" class="homepage">Homepage</a>
+    <a href="/dashboard">Dashboard</a>
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/" class="homepage">Homepage</a>
+    <a href="/login">Login</a>
+    {{/if}}
     </nav>
-    {{{body}}}
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+  </div>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 
 </body>
-{{!--
-<script src="/js/nav.js"></script> --}}
-<script src="/public/js/login.js"></script>
-<script src="/public/js/home.js"></script>
 
 </html>
+© 2021 GitHub, Inc.
