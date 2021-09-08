@@ -17,7 +17,7 @@ const session = require('express-session')
 // Sequelize store to save the session so the user can remain logged in
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // Handlebars helpers
-const helpers = require('./utils/helpers');
+const helpers = require('./utils/helper');
 
 // Initialize handlebars for the html templates
 const hbs = exphbs.create({ helpers });
