@@ -4,38 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MVC Tech Blog</title>
-  <link rel="stylesheet" href="/public/stylesheets/style.css">
+  <title>The Tech Blog</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
   <div class="wrapper">
     <header>
-      <div>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/views/dashboard.handlebars">Dashboard</a>
-          {{#if loggedIn}}
-          <a href="/" id="logout">Logout</a>
-          {{else}}
-          <a href="/views/login.handlebars">Login</a>
-          {{/if}}
-        </nav>
-      </div>
-      <div>
-        <h1 class="home-title">MVC Tech Blog</h1>
-      </div>
+      <h1>
+        <p class="blog-title">The Tech Blog <i class="large material-icons">laptop_mac</i></p>
+      </h1>
+    
+    <nav>
+    {{#if loggedIn}}
+    <a href="/" class="homepage">Homepage</a>
+    <a href="/dashboard">Dashboard</a>
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/" class="homepage">Homepage</a>
+    <a href="/login">Login</a>
+    {{/if}}
+    </nav>
     </header>
     <main>
       {{{ body }}}
     </main>
-    <footer>
-      Thanks for visiting!
-    </footer>
   </div>
-  {{#if loggedIn}}
-  <script src="/public/javascript/logout.js"></script>
-  {{/if}}
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+
 </body>
 
 </html>
