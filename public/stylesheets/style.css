@@ -1,60 +1,42 @@
-:root {
-  --primary-color: #6F1E51;
-  --primary-hover: #B53471;
-}
-
 * {
   box-sizing: border-box;
-
 }
 
-body, html, input, textarea {
+body, html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: sans-serif;
   color: #333;
 }
 
 a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: white;
   font-weight: bold;
   transition: color .1s;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.homepage {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: bold;
-  transition: color .1s;
-  margin: 20px;
 }
 
 a:hover {
-  color: var(--primary-hover);
+  color: gray;
 }
 
-.blog-title {
-  color: var(--primary-hover);
-  font-size: 25px;
-  margin: 25px; 
-  padding: 10px; 
+header a:hover {
+ color: lightgrey; 
 }
 
-.create-btn {
-  color:white;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.create-btn:hover {
-  color:white;
+.home-title {
+  font-size: 3rem;
+  color: white;
+  background-color: #333;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  box-shadow: 5px 7px lightgray;
 }
 
 button {
-  background-color: var(--primary-color);
+  background-color: #225ca3;
   border: 0;
   padding: 1%;
   color: white;
@@ -62,17 +44,18 @@ button {
   transition: background-color .1s;
   cursor: pointer;
   border-radius: 5px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-button:hover{
-  background-color: var(--primary-hover);
+button:hover {
+  background-color: lightsteelblue;
 }
 
 .post-list {
   margin: 0;
   padding: 0;
+  list-style: none;  
 }
+
 
 textarea, input {
   padding: .5%;
@@ -82,7 +65,7 @@ textarea, input {
 
 textarea:focus, input:focus {
   outline: none;
-  border: 1px solid var(--primary-hover);
+  border: 1px solid #3486eb;
 }
 
 textarea {
@@ -108,11 +91,13 @@ form label {
 }
 
 header {
+  background-color: lightslategray;
   border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1%;
+  font-size: 1.5rem;
 }
 
 header h1 {
@@ -122,6 +107,7 @@ header h1 {
 main {
   flex: 1;
   padding: 2% 4%;
+  background-color: gainsboro;
 }
 
 .btn-no-style {
@@ -130,7 +116,7 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: var(--primary-color);
+  color: #225ca3;
   font-size: 100%;
   font-weight: bold;
   transition: color .1s;
@@ -139,7 +125,7 @@ main {
 
 .btn-no-style:hover {
   background: none;
-  color: var(--primary-hover);
+  color: #3486eb;
 }
 
 .delete-post-btn {
@@ -151,19 +137,46 @@ main {
 }
 
 .post {
+  background-color: lightskyblue;
   margin-bottom: 2%;
   line-height: 150%;
+  border-color: black;
+  border: solid;
 }
 
-.post .title span {
+.post-head {  
+  /* margin-bottom: 10px; */
+  padding: 2px;
+}
+
+.title {  
+  font-size: 150%;  
+  margin: 2px;
+}
+
+.meta {
   font-style: italic;
-  font-size: 90%;
-  color: #7d7d7d;
+  font-size: 80%;
+  margin: 2px;
+}
+
+.post-text {
+  background-color: whitesmoke;
+  padding: 3px;
 }
 
 .edit-link {
   display: block;
   margin: -1.5% 0 2% 0;
+}
+
+.upvote-btn {
+  background-color: #197d0f;
+  transition: background-color .1s;
+}
+
+.upvote-btn:hover {
+  background-color: #1f9c13;
 }
 
 .comment-form {
