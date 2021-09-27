@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nate's Tech Blog</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="utf-8">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="/public/css/main.css">
+
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Nate's Tech Blog</a>
-      </h1>
-      <nav>
-        {{#if loggedIn}}
-        <a href="/dashboard"><span class="glyphicon glyphicon-user"></span>{{ username }}'s Dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-      Thanks for visiting!
-    </footer>
-  </div>
+    {{!-- Nav bar that goes on every page --}}
+    <nav id="navbar">
+        <ul id="navbar-ul">
+            <li>
+                <p><a class="link" href="/">Home</a></p>
+            </li>
+            {{#if loggedIn}}
+            <li>
+                <p><a class="link" href="/views/dashboard.handlebars">Dashboard</a></p>
+            </li>
+            <li>
+                <p><button id="logout-btn" class="btn-no-style">Logout</button> </p>
+            </li>
+
+            {{else}}
+            <li>
+                <p><a class="link" href="/views/login.handlebars">Login</a></p>
+            </li>
+            {{/if}}
+        </ul>
+        <h1 id="nav-header">The Tech Blog</h1>
+    </nav>
+    {{{body}}}
 
 </body>
+{{!--
+<script src="/js/nav.js"></script> --}}
+<script src="/public/js/logout.js"></script>
+<script src="/public/js/home.js"></script>
 
 </html>
-
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
